@@ -8,12 +8,16 @@ const JokeCard = (props) =>{
     console.log(props)
     return(
         <div className='content'>
-          <button onClick={props.fetchActivity}>Get</button>
-          {!props.joke && !props.isLoading && (
-            <h2>Get a joke!</h2>
+          <button onClick={props.fetchActivity}>Click</button>
+          {/* {!props.joke && !props.isLoading && (
+            <h2>Get a joke</h2>
+            )} */}
+            {props.joke && !props.isLoading && (
+            <h2>Click to get a joke</h2>
             )}
-            <p>Setup: {props.joke.setup}</p>
-            <p>Punchline: {props.joke.punchline}</p>
+            {/* <p>Type of Joke: {props.joke.type}</p> */}
+            <p>{props.joke.setup}</p>
+            <p>{props.joke.punchline}</p>
           {props.isLoading && (
             <Loader
               type="Puff"
