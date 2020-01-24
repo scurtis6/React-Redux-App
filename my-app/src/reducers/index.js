@@ -1,54 +1,34 @@
-// reducers index
-import { FETCHING_STARTED, FETCHING_SUCCESS, FETCHING_FAILURE, FETCHING_NAME_STARTED, FETCHING_NAME_SUCCESS, FETCHING_NAME_FAILURE } from '../actions';
+import {FETCHING_JOKE_START,
+     FETCHING_JOKE_SUCCESS,
+      } from '../actions/index';
 
-export const initialState = {
-    nameday: [],
-    isFetching: false,
-    error: '',
-    namedays: []
-}
-
-export const reducer = (state = initialState, action) => {
+export const initialState={
+    joke: [],
+    isLoading:false,
+    error: ''
+};
+export const reducer = (state = initialState, action) =>{
+    console.log('state', state);
+    console.log('action', action)
     switch (action.type) {
-        case FETCHING_STARTED:
-        return {
-            ...state,
-            isFetching: true,
-            error: ''
-        };
-        case FETCHING_SUCCESS:
-            return {
+        case FETCHING_JOKE_START:
+            return{
                 ...state,
-                isFetching: false,
-                error: '',
-                nameday: action.payload
-            }
-        case FETCHING_FAILURE:
-            return {
+                isLoading: true,
+            }        
+        case FETCHING_JOKE_SUCCESS:
+            return{
                 ...state,
-                isFetching: false,
-                error: action.payload
-            }
-            case FETCHING_NAME_STARTED:
-                return {
-                    ...state,
-                    isFetching: true,
-                    error: ''
-                };
-            case FETCHING_NAME_SUCCESS:
-                return {
-                    ...state,
-                    isFetching: false,
-                    error: '',
-                    namedayS: action.payload
-                }
-            case FETCHING_NAME_FAILURE:
-                return {
-                    ...state,
-                    isFetching: false,
-                    error: action.payload
-                }
-        default:
-            return state;
+                isLoading:false,
+                joke: action.payload
+            }        
+        // case FETCHING_JOKE_FAILURE:
+        //     return{
+        //         ...state,
+        //         isLoading:false,
+        //         error: action.payload
+        //     }
+        default: 
+        return state;
     }
-}
+}; 
