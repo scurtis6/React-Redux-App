@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+  background-color: darkgray;
+  padding: 2% 0;
+}
+
+.App h1{
+  color: white;
+}
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+.content{
+  color: white;
+  background-color: gray;
+  padding: 2% 0;
+}
+
+.content button {
+  color: white;
+  background-color: darkgray;
+  padding: 1%;
+  border: 1px solid black;
+}
+
+.content button:hover{
+  background-color: white;
+  color: darkgray;
+}
